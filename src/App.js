@@ -1,13 +1,21 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
 import './App.scss';
+
+import Main from "./containers/Main" ;
+import PhotoGrid from "./containers/PhotoGrid" ;
+import SinglePhoto from "./containers/SinglePhoto" ;
+
+import { BrowserRouter, Route,browserHistory } from 'react-router-dom'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <p>New App</p>
-      </div>
+      <BrowserRouter history={browserHistory}>
+        <div className="App">
+          <Route exact path="/" component={Main} />
+        </div>
+      </BrowserRouter>
+      
     );
   }
 }
