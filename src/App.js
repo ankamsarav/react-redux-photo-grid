@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <BrowserRouter history={browserHistory}>
         <div className="App">
-          <Route exact path="/" component={Main} />
+            <Route path="/" component={Main} />
         </div>
       </BrowserRouter>
       

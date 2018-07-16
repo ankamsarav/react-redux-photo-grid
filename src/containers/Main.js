@@ -6,13 +6,14 @@ import SinglePhoto from "./SinglePhoto" ;
 
 import { Route, Switch } from 'react-router-dom'
 
-const Main = (props) => {
+const Main = ({match}) => {
     return(
         <div>
             <Header />
             <Switch>
-                <Route path="/" component={PhotoGrid} />
-                <Route path="/view/:postId" component={SinglePhoto} />
+                <Route exact path={`${match.path}`} component={PhotoGrid} />
+                <Route path={`${match.path}view/:postId`} component={SinglePhoto} />
+                <Route component={render => (<div>no data </div>)} />
             </Switch>
         </div>
     )
