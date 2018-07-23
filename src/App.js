@@ -8,6 +8,10 @@ import SinglePhoto from "./containers/SinglePhoto" ;
 import { BrowserRouter, Router, Route,browserHistory } from 'react-router-dom';
 import {Provider} from "react-redux";
 import store, {history} from "./store";
+import { ConnectedRouter } from 'connected-react-router'
+
+console.log("history");
+console.log(history);
 
 
 
@@ -15,12 +19,12 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Router  history={history}>
+        <ConnectedRouter  history={history}>
           <div className="App">
               <MainApp />
-              {/* <Route path="/" component={MainApp} /> */}
+              {/* <Route component={MainApp} /> */}
           </div>
-        </Router>
+        </ConnectedRouter>
       </Provider>
       
       
