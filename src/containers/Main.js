@@ -12,12 +12,11 @@ import * as actions from "../actions";
 
 class Main extends Component {
     render() {
-        console.log(this.props);
         return (
             <div>
                 <Header />
                 <Switch>
-                    <Route exact path="/" component={PhotoGrid} />
+                    <Route exact path="/" render= {(props) => (<PhotoGrid {...this.props}/> )}/>
                     <Route exact path="/view/:postId" component={SinglePhoto} />
                     <Route component={render => (<div>no data </div>)} />
                 </Switch>
