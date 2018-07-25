@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import './Photo.scss';
 
-const Photo = ({post, i, comments}) => {
+const Photo = ({post, i, comments, increment, decrement}) => {
     return (
         <figure className="photo">
             <div className="photo-outer">
@@ -13,7 +13,7 @@ const Photo = ({post, i, comments}) => {
             <figcaption>
                 <p>{post.caption}</p>
                 <div className="control-buttons">
-                    <button className="likes">&hearts; {post.likes}</button>
+                    <button onClick={(e) => {e.target.classList.contains("liked") ? (decrement(i), e.target.classList.remove("liked")) : (increment(i), e.target.classList.add("liked")) }}  className="likes">&hearts; {post.likes}</button>
                     <Link className="button" to={`/view/${post.code}`}>
                         <span className="comment-count">
                             <span className="speech-bubble"></span>
