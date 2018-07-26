@@ -7,11 +7,12 @@ const SinglePhoto = (props) => {
     const postId = props.location.pathname.split("/")[2];
     const i = props.posts.findIndex(((post) => post.code === postId));
     const post = props.posts[i];
-    console.log(post);
+    const postComments = props.comments[postId] || [];
+    
     return(
         <div className="single-photo">
             <Photo key={i} i={i} post={post} {...props}/>
-            <Comments />
+            <Comments postComments= {postComments} postId={postId} {...props}/>
         </div>
     )
 }
