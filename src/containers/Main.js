@@ -17,7 +17,7 @@ class Main extends Component {
                 <Header />
                 <Switch>
                     <Route exact path="/" render= {(props) => (<PhotoGrid {...this.props}/> )}/>
-                    <Route exact path="/view/:postId" component={SinglePhoto} />
+                    <Route exact path="/view/:postId" render= {(props) => (<SinglePhoto {...this.props} /> )} />
                     <Route component={render => (<div>no data </div>)} />
                 </Switch>
             </div>
