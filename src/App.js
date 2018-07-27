@@ -22,7 +22,6 @@ class App extends Component {
         <ConnectedRouter  history={history}>
           <div className="App">
               <MainApp />
-              {/* <Route component={MainApp} /> */}
           </div>
         </ConnectedRouter>
       </Provider>
